@@ -1,17 +1,18 @@
 
 import './App.css'
-import AddContacts from './components/AddContacts/AddContacts'
+import ContactForm from './components/ContactsForm/ContactsForm'
+import SearchBox from './components/SearchBox/SearchBox'
+import ContactList from './components/ContactList/ContactList'
 
-import List from './components/List/List'
-import SearchBar from './components/SearchBar/SearchBar'
+
 
 function App() {
 
   return (
     <>
-      <AddContacts/>
-      <SearchBar />
-      <List/>
+      <ContactForm />
+      <SearchBox />
+      <ContactList/>
     </>
   )
 }

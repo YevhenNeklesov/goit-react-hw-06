@@ -2,10 +2,10 @@ import { Field, Form, Formik } from "formik"
 import { nanoid } from "nanoid"
 import { useDispatch } from "react-redux"
 import { addContact } from "../../redux/contactsSlice"
-import s from './AddContacts.module.css'
+import s from './ContactsForm.module.css'
 import toast, { Toaster } from "react-hot-toast"
 
-const AddContacts = () => {
+const ContactForm = () => {
     const initialValues = { name: '', phone: '' }
     const dispatch = useDispatch()
     
@@ -32,4 +32,4 @@ const AddContacts = () => {
   )
 }
 
-export default AddContacts
+export default ContactForm

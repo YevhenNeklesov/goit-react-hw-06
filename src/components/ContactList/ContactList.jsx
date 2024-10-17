@@ -1,11 +1,12 @@
-import { useDispatch, useSelector } from "react-redux"
-import { deleteContact, selectContacts } from "../../redux/contactsSlice"
+import { useSelector } from "react-redux"
+import { selectContacts } from "../../redux/contactsSlice"
 import { selectNameFilter } from "../../redux/filtersSlice"
-import s from './List.module.css'
+import s from './ContactList.module.css'
+import Contact from "../Contact/Contact"
 
-const List = () => {
+const ContactList = () => {
     const contacts = useSelector(selectContacts)
-    const dispatch = useDispatch()
+    
     const searchName = useSelector(selectNameFilter)
     const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(searchName.toLowerCase().trim()))
 
@@ -14,9 +15,7 @@ const List = () => {
         <ul className={s.ul}>
             {filteredContacts.map(item => (
                 <li className={s.li} key={item.id}>
-                    <p className={s.text}>Name: {item.name}</p>
-                    <p className={s.text}>Phone: {item.phone}</p>
-                    <button className={s.btn} onClick={() => dispatch(deleteContact(item.id))}>Delete contact</button>
+                    <Contact name={item.name} phone={item.phone} id={item.id} />
                 </li>
             ))}
       </ul>
@@ -24,4 +23,4 @@ const List = () => {
   )
 }
 
-export default List
+export default ContactList
