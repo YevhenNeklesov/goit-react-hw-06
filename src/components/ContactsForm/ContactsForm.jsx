@@ -25,7 +25,7 @@ const ContactForm = () => {
           <Formik initialValues={initialValues} onSubmit={onSubmit}>
               <Form className={s.form}>
                   <Field className={s.input} name='name' placeholder='Enter contact name' />
-                  <Field className={s.input} type='number' name='phone' placeholder='Enter contact phone number'/>           
+                  <Field className={s.input} type='tel' name='phone' placeholder='Enter contact phone number'/>           
                   <button className={s.btn} type="submit">Add contact</button>
               </Form>
           </Formik>
