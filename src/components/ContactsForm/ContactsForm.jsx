@@ -11,7 +11,9 @@ const ContactForm = () => {
     
     const onSubmit = (values, options) => {
         const newContact = { id: nanoid(), name: values.name, phone: values.phone }
-        values.phone && values.name ? dispatch(addContact(newContact)) && options.resetForm() : toast('Please enter name and phone number', {
+        values.phone && values.name
+            ? dispatch(addContact(newContact)) && options.resetForm()
+            : toast('Please enter name and valid phone number', {
                  duration: 2000,
                  position: 'top-right'
            })
@@ -23,7 +25,7 @@ const ContactForm = () => {
           <Formik initialValues={initialValues} onSubmit={onSubmit}>
               <Form className={s.form}>
                   <Field className={s.input} name='name' placeholder='Enter contact name' />
-                  <Field className={s.input} type='phone' name='phone' placeholder='Enter contact phone number'/>           
+                  <Field className={s.input} type='number' name='phone' placeholder='Enter contact phone number'/>           
                   <button className={s.btn} type="submit">Add contact</button>
               </Form>
           </Formik>
