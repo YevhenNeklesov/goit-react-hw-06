@@ -2,7 +2,7 @@ import { Field, Form, Formik } from "formik"
 import { nanoid } from "nanoid"
 import { useDispatch } from "react-redux"
 import { addContact } from "../../redux/contactsSlice"
-import s from './ContactsForm.module.css'
+import s from './ContactForm.module.css'
 import toast, { Toaster } from "react-hot-toast"
 
 const ContactForm = () => {
